@@ -9,13 +9,11 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/include
 )
 
-# setup the directory that includes source files
-file(GLOB SOURCES src/*.cpp)
-
 # Declare a C++ executable
 add_executable(
     ${PROJECT_NAME} 
-    SOURCES
+    ${CMAKE_SOURCE_DIR}/src/main.cpp
+    ${CMAKE_SOURCE_DIR}/src/list.cpp
 )
 
 # linking external libraries
