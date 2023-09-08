@@ -23,7 +23,7 @@ jobs:
         run:  ls -al
 
       - name: Enter the test directory
-        run:  cd ${{github.workspace}}/backend/test/build
+        run:  cd backend/test/build
 
       - name: Configure CMake
         run:  cmake ${{github.workspace}}/backend/test
