@@ -95,3 +95,22 @@ void list::pop_back () {
 
     size_--;
 }
+
+#include <emscripten/bind.h>
+
+using namespace emscripten;
+
+EMSCRIPTEN_BINDINGS(b_list) {
+    class_<list>("list")
+        .constructor<>()
+        .function("front", &list::front)
+        .function("back", &list::back)
+        .function("begin", &list::begin)
+        .function("end", &list::end)
+        .function("empty", &list::empty)
+        .function("size", &list::size)
+        .function("push_front", &list::push_front)
+        .function("push_back", &list::push_back)
+        .function("pop_front", &list::pop_front)
+        .function("pop_back", &list::pop_back);
+}
