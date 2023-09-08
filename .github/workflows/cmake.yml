@@ -19,11 +19,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Current directory
+        run:  ls -al
+
       - name: Enter the test directory
-        run:  cd ./backend/test/build
+        run:  cd ${{github.workspace}}/backend/test/build
 
       - name: Configure CMake
-        run:  cmake ./backend/test
+        run:  cmake ${{github.workspace}}/backend/test
 
       - name: Build
         run:  make DataStructuresGtest
